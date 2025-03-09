@@ -2,7 +2,6 @@ defmodule Server.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Server.Accounts.Validator
-  import Bcrypt, only: [hash_pwd_salt: 1]
 
   schema "users" do
     field :username, :string

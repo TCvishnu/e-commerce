@@ -67,8 +67,8 @@ config :swoosh, :api_client, false
 
 config :server, Server.Repo,
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("DATABASE_PASSWORD"),
   database: "ecom_db",
   hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
+  show_sensitive_data_on_connection_error: System.get_env("PHOENIX_ENV") == "dev",
   pool_size: 10

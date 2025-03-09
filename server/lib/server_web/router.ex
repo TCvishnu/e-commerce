@@ -7,6 +7,9 @@ defmodule ServerWeb.Router do
 
   scope "/api", ServerWeb do
     pipe_through :api
+
+    post "/register", AuthController, :register
+    post "/login", AuthController, :login
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

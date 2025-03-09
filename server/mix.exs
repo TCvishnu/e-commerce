@@ -46,6 +46,7 @@ defmodule Server.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:bcrypt_elixir, "~> 3.0"},
+      {:guardian, "~> 2.0"}
     ]
   end
 
