@@ -5,11 +5,19 @@ defmodule ServerWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug ServerWeb.Plug.Authenticate
+  end
+
   scope "/api", ServerWeb do
     pipe_through :api
 
     post "/register", AuthController, :register
     post "/login", AuthController, :login
+  end
+
+  scope "/api", ServerWeb do
+    pipe_through [:api, :auth]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
