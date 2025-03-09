@@ -64,3 +64,11 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :server, Server.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "ecom_db",
+  hostname: "localhost",
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
